@@ -76,7 +76,6 @@ class InclusionTagsTestCase(unittest.TestCase):
 
         # if a conf is provided that contains gizmos but not for the provided slot, return the empty list
         settings.ROOT_GIZMOCONF = 'gizmo.tests.gizmos'
-        #gizmos = gizmo_inclusion_tags.get_gizmos_by_slot('bogus_slot_name')
         gizmos = node.get_gizmos('bogus_slot_name', request)
         self.failUnlessEqual(gizmos, [])
         
