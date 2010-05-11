@@ -14,30 +14,31 @@ Installation
 #. Create your gizmos config file in the form::
 
     gizmos = (
-        ('<loader name>', '<tag name>', '<slot name>'),
+        ('<loader name>', '<tag name>', '<slot name>', [['<url_name'>, ]]),
     )
 
 With:
 
 * <loader name> being the name you would normally pass to Django's load tag, i.e. **myapp_inclusion_tags** for **{% load myapp_icnlusion_tags %}**.
 * <tag name> being the name of the tag you want to include, i.e. **advert** for **{% advert %}**
-* <slot name> being the name of the slot you want the tag to show up in, i.e. **home_advert**.
+* <slot name> being the name of the slot you want the tag to show up in, i.e. **home**.
+* <url_name> *optional* being the names of the urls you want the tag to show up in, i.e. **home**.
 
 Usage
 -----
 
 Gizmos are stock standard Django inclusion tags. The only diffirence is that instead of specifying tags within a template you specify tags from a distance by using a gizmo conf file in conjunction with the gizmos tag.
 
-For example, lets say we have an **advert** tag specified in **myapp**'s inclusion tags which we only want to call  in gizmo slots named **home_advert**:
+For example, lets say we have an **advert** tag specified in **myapp**'s inclusion tags which we only want to call  in gizmo slots named **advert** for the url named **home**:
 
 #. Create your tags as normal.
 
 #. Create your gizmos config file in the form::
     gizmos = (
-        ('myapp_inclusion_tag', 'advert', 'home_advert'),
+        ('myapp_inclusion_tag', 'advert', 'advert', ['home', ]),
     )
 
-#. In your template load the gizmo inclusion tags and include a gizmos tag with a slot name of home_advert::
+#. In your template for the home view load the gizmo inclusion tags and include a gizmos tag with a slot name of advert::
 
     {% load gizmo_inclusion_tags %}
 
