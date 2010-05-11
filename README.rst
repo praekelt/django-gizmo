@@ -23,9 +23,6 @@ With:
 * <tag name> being the name of the tag you want to include, i.e. **advert** for **{% advert %}**
 * <slot name> being the name of the slot you want the tag to show up in, i.e. **home_advert**.
 
-#. Specify your gizmo conf file in your projects settings file:
-    
-
 Usage
 -----
 
