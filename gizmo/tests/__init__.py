@@ -69,7 +69,7 @@ class InclusionTagsTestCase(unittest.TestCase):
         del settings.ROOT_GIZMOCONF
         gizmos = node.get_gizmos('slot_name', request)
         self.failUnlessEqual(gizmos, [])
-
+        
         # if a conf is provided that does not contain gizmos, raise an error
         settings.ROOT_GIZMOCONF = 'gizmo.tests.empty_gizmos'
         self.failUnlessRaises(AttributeError, node.get_gizmos, 'slot_name', request)
