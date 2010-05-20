@@ -92,5 +92,6 @@ class GizmosNode(template.Node):
         tag_string = "".join(["{%% %s %%}" % gizmo[1] for gizmo in gizmos])
 
         t = Template("%s%s" % (load_string, tag_string))
-        context = template.Context({})
+
+        context.update({'gizmo_slot_name': slot_name})
         return t.render(context)
