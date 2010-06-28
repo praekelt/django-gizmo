@@ -1,6 +1,7 @@
 from django import template
 from django.conf import settings
 from django.core import urlresolvers
+from django.core.urlresolvers import RegexURLResolver, Resolver404
 from django.template import Template
 
 register = template.Library()
