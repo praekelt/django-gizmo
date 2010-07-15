@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core import urlresolvers
 from django.core.urlresolvers import RegexURLResolver, Resolver404
 from django.template import Template
+from django.utils.encoding import smart_str
 
 register = template.Library()
 
@@ -45,7 +46,7 @@ class GizmosNode(template.Node):
                         try:
                             return pattern.name
                         except AttributeError:
-                            return resolve_pattern_name(pattern, new_path)
+                            return self.resolve_pattern_name(pattern, new_path)
                     tried.append(pattern.regex.pattern)
             raise Resolver404, {'tried': tried, 'path': new_path}
         raise Resolver404, {'path' : path}
