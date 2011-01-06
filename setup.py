@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-gizmo',
-    version='0.0.1',
+    version='0.0.2',
     description='Django app allowing for configurable targetting of template inclusion tags.',
     long_description = open('README.rst', 'r').read(),
     author='Praekelt Foundation',
