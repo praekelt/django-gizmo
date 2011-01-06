@@ -76,9 +76,13 @@ class GizmosNode(template.Node):
                     gizmo_url_names = gizmo[3]
                     urlconf = getattr(request, "urlconf", settings.ROOT_URLCONF)
                     resolver = urlresolvers.RegexURLResolver(r'^/', urlconf)
-                    url_name = self.resolve_pattern_name(resolver, request.path)
-                    if url_name in gizmo_url_names:
-                        slot_gizmos.append(gizmo)
+                    try:
+                        url_name = self.resolve_pattern_name(resolver, request.path)
+                    except Resolver404:
+                        url_name = None
+                    if url_name:
+                        if url_name in gizmo_url_names:
+                            slot_gizmos.append(gizmo)
                 except IndexError:
                     slot_gizmos.append(gizmo)
 
