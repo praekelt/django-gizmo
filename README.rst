@@ -19,7 +19,7 @@ Installation
 
 With:
 
-* <loader name> being the name you would normally pass to Django's load tag, i.e. **myapp_inclusion_tags** for **{% load myapp_icnlusion_tags %}**.
+* <loader name> being the name you would normally pass to Django's load tag, i.e. **myapp_inclusion_tags** for **{% load myapp_inclusion_tags %}**.
 * <tag name> being the name of the tag you want to include, i.e. **advert** for **{% advert %}**
 * <slot name> being the name of the slot you want the tag to show up in, i.e. **home**.
 * <url_name> *optional* being the names of the urls you want the tag to show up in, i.e. **home**.
@@ -34,6 +34,7 @@ For example, lets say we have an **advert** tag specified in **myapp**'s inclusi
 #. Create your tags as normal.
 
 #. Create your gizmos config file in the form::
+
     gizmos = (
         ('myapp_inclusion_tag', 'advert', 'advert', ['home', ]),
     )
