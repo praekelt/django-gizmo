@@ -12,7 +12,7 @@ setup(
     packages=find_packages(),
     install_requires = [
         'Django',
-    ]
+    ],
     test_suite="setuptest.SetupTestSuite",
     tests_require=[
         'django-setuptest>=0.0.6',
